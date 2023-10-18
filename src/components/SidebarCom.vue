@@ -31,6 +31,8 @@ export default {
     logout(){
       this.$store.commit('setLogin',false);
       this.$store.state.thisUser={};
+      localStorage.setItem("thisUser", JSON.stringify(this.$store.state.thisUser));
+
     }
   },
 };

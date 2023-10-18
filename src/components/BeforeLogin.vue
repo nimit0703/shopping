@@ -10,13 +10,13 @@
 <style>
 .beforeLogin {
   position: fixed;
-  background-color: hsla(0, 0%, 0%, 0.342);
+  background-color: hsla(0, 0%, 0%, 0.58);
   top: 0;
   left: 20vw;
   width: 100%;
   height: 100%;
   z-index: 100;
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(8px);
   color: #fff;
 }
 .beforeLogin-content {
