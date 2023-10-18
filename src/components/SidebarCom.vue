@@ -7,12 +7,12 @@
       <router-link to="products" tag="b-nav-item">Products</router-link>
       <router-link to="cart" tag="b-nav-item">Cart</router-link>
       <router-link to="checkout" tag="b-nav-item">Checkout</router-link>
-      <b-nav-item tag="b-nav-item" to="logout" v-show="isSignIn"
-        >Logout</b-nav-item
-      >
-      <b-nav-item tag="b-nav-item" to="login" v-show="!isSignIn"
-        >Login</b-nav-item
-      >
+      <template v-if="isLogin">
+        <b-nav-item tag="b-nav-item" to="login" @click="logout">Logout</b-nav-item>
+      </template>
+      <template v-else>
+        <router-link to="login" tag="b-nav-item">Login</router-link>
+      </template>
     </b-nav>
   </div>
 </template>
@@ -23,9 +23,15 @@ export default {
     return {};
   },
   computed: {
-    isSignIn() {
-      return this.$store.state.isSignIn;
+    isLogin() {
+      return this.$store.state.isLogin;
     },
+  },
+  methods: {
+    logout(){
+      this.$store.commit('setLogin',false);
+      this.$store.state.thisUser={};
+    }
   },
 };
 </script>

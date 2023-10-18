@@ -1,15 +1,25 @@
 <template>
   <div>
-    <div class="d-flex m-auto text-center justify-content-center">
-      <span> products </span>
+    <div class="container text-center mt-4">
+      <h2>Products</h2>
     </div>
-    <template>
-      <div class="d-flex flex-wrap">
-        <CardComp v-for="product in products" :product="product" :key="product.id" class="m-3"></CardComp>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="row">
+            <CardComp
+              v-for="product in products"
+              :product="product"
+              :key="product.id"
+              class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4"
+            ></CardComp>
+          </div>
+        </div>
       </div>
-    </template>
+    </div>
   </div>
 </template>
+
 
 <script lang="ts">
 import CardComp from "../components/CardComp.vue";

@@ -23,18 +23,23 @@
           required
         ></b-form-input>
       </b-form-group>
-      <b-form-group id="input-group-2" label="Enter Password" label-for="input-2">
+      <b-form-group
+        id="input-group-2"
+        label="Enter Password"
+        label-for="input-2"
+      >
         <b-form-input
           id="input-2"
-          v-model="form.name"
-          placeholder="Enter name"  
+          v-model="form.password"
+          placeholder="Enter password"
           type="password"
           required
         ></b-form-input>
       </b-form-group>
-      
 
-      <b-button type="submit" class="d-flex m-auto" variant="primary">Sign In</b-button>
+      <b-button type="submit" class="d-flex m-auto" variant="primary"
+        >Sign In</b-button
+      >
     </b-form>
   </div>
 </template>
@@ -46,7 +51,7 @@ export default {
       form: {
         email: "",
         name: "",
-        password:""
+        password: "",
       },
       show: true,
     };
@@ -54,7 +59,15 @@ export default {
   methods: {
     onSubmit(event: any) {
       event.preventDefault();
-      alert(JSON.stringify(this.form));
+      this.$store.commit("setNewUser", {
+        name: this.form.name,
+        email: this.form.email,
+        password: this.form.password,
+      });
+      this.$store.commit('setLogin',true) 
+      this.$store.commit("setThisUserByEmail", this.form.email);
+      this.$router.push("/");
+
     },
   },
 };
