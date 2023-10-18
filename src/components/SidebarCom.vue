@@ -49,5 +49,8 @@ export default {
 }
 .nav-wrapper {
   min-height: 100vh;
+  width: 20vw;
+  background-color: rgb(225, 225, 225);
+  margin: 0;
 }
 </style>

@@ -2,7 +2,7 @@
   <div>
     <template>
       <div class="d-flex align-items-stretch">
-        <SidebarComponent class="border-right p-3 m-2"></SidebarComponent>
+        <SidebarComponent class="border-right"></SidebarComponent>
         <router-view class="p-3 flex-grow-1"></router-view>
         <SpinnerCom v-show="showSpin"></SpinnerCom>
       </div>
