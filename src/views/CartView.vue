@@ -3,13 +3,13 @@
     <template v-if="emptyCart">
       <div class="empty">
           <b-icon-cart3 class="empty-icon text-secondary"></b-icon-cart3>
-          <p class="text-secondary">Nothing show ! Go and Buy something...</p>
+          <p class="text-secondary">Nothing to show ! Go and Buy something ...</p>
         </div>
     </template>
     <CartCardCom
       v-for="item in items"
       :key="item.id"
-      :id="item.id"
+      :product="item"
       class="ml-5 mt-2"
     ></CartCardCom>
   </div>

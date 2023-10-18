@@ -1,6 +1,6 @@
 <template>
   <div class="nav-wrapper">
-    <b-nav vertical class="w-20">
+    <b-nav vertical class="w-20 pt-5 pl-2">
       <router-link to="/" tag="b-nav-item" exact-active-class="active"
         >Shoppp</router-link
       >
@@ -52,5 +52,7 @@ export default {
   width: 20vw;
   background-color: rgb(225, 225, 225);
   margin: 0;
+  font-size: 1.4vw;
+  font-weight: 400;
 }
 </style>

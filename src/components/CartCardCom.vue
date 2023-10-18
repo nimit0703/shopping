@@ -9,7 +9,10 @@
         </div>
         <div class="col-md-2">
           <div class="text-center">
-            <b-form-spinbutton v-model="item.amount" @change="updateAmount"></b-form-spinbutton>
+            <b-form-spinbutton
+              v-model="item.amount"
+              @change="updateAmount"
+            ></b-form-spinbutton>
           </div>
         </div>
       </div>
@@ -17,25 +20,29 @@
   </div>
 </template>
 
-
 <script lang="ts">
 import Product from "@/interface/Product";
 
 export default {
-  props: ["id"],
+  props: {
+    product: {
+      type: Object,
+      required: true, 
+    },
+  },
   data() {
     return {
       item: {} as any,
     };
   },
   created() {
-    this.item = this.$store.getters.getCartItemById(this.id);
+    this.item = this.$store.getters.getCartItemById(this.product.id);
   },
   methods: {
     updateAmount() {
-      console.log(this.item.amount)
+      console.log(this.item.amount);
       this.$store.commit("updateCartItemAmount", {
-        id: this.id,
+        id: this.product.id,
         amount: this.item.amount,
       });
     },
