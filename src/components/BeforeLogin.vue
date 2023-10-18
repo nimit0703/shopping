@@ -3,7 +3,6 @@
     <div class="beforeLogin-content">
       <p>Login First</p>
       <router-link to="login">Login</router-link>
-      <p>Current Route: {{ $route.path }}</p>
     </div>
   </div>
 </template>

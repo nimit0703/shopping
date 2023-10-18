@@ -32,9 +32,3 @@ export default {
   },
 };
 </script>
-<style scoped>
-.hi-100 {
-  height: 100vh;
-  /* width: 20%; */
-}
-</style>
